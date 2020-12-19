@@ -28,7 +28,7 @@
               <tr style="line-height: 28px;">
                 <td><%= i + 1 %></td>
                 <td><%= activity.name %></td>
-                <td><%= link_to 'Activity Detail', admin_activity_path(activity), remote: true, data:{toggle:  "modal", target: '#activityModal'}, class: 'blue-text' %></td>
+                <td><%= activity.description.present? ? link_to('Activity Detail', admin_activity_path(activity), remote: true, data:{toggle:  "modal", target: '#activityModal'}, class: 'blue-text') : "No description" %></td>
                 <td><%= activity.category.name %></td>
                 <% if !activity.cycles.empty? %>
                   <td><%= activity.cycles.first.start_t.strftime("%Y-%m-%d %H:%M") %></td>
