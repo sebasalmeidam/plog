@@ -1,0 +1,11 @@
+<% case activity.status %>
+<% when 'Waiting' %>
+  <%= link_to 'Start', start_admin_activity_path(activity), class: 'btn btn-sm btn-primary btn-rounded' %>
+<% when "In Progress" %>
+  <%= link_to 'Pause', pause_admin_activity_path(activity), class: 'btn btn-sm btn-primary btn-rounded' %>
+<% when "Paused" %>
+  <%= link_to 'Restart', start_admin_activity_path(activity), class: 'btn btn-sm btn-primary btn-rounded' %>
+  <%= link_to 'End', complete_admin_activity_path(activity), class: 'btn btn-sm btn-danger btn-rounded' %>
+<% when "Completed" %>
+  <%= link_to 'View Log', '#', class: 'btn btn-sm btn-success btn-rounded', data: {confirm: 'Pending modal with log'} %>
+<% end %>

@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Process Log sample app.
 
-Things you may want to cover:
+Rails 6.1, Ruby 2.6.6
 
-* Ruby version
+**Thinked for 1 user**
 
-* System dependencies
+## To Do:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Redesign so that each user can create/see their one categories/activities
