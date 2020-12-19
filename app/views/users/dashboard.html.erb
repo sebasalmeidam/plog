@@ -19,6 +19,7 @@
               <th>Category</th>
               <th>Start</th>
               <th>End</th>
+              <th>Time</th>
               <th>Status</th>
               <th></th>
             </tr>
@@ -41,6 +42,7 @@
                   <td>-</td>
                   <td>-</td>                  
                 <% end %>
+                <td>time pending</td>
                 <td><%= activity.status %></td>
                 <td>
                   <%= render partial: "change_activity_status", locals: {activity: activity} %> |
