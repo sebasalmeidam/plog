@@ -39,11 +39,13 @@
                   <% else %>
                     <td>-</td>
                   <% end %>
+                  <td><%= activity.cycles.sum(&:cycle_time) %> minutes</td>
                 <% else %>
                   <td>-</td>
-                  <td>-</td>                  
+                  <td>-</td>
+                  <td>-</td>
                 <% end %>
-                <td>time pending</td>
+                
                 <td><%= activity.status %></td>
                 <td>
                   <%= render partial: "change_activity_status", locals: {activity: activity} %> |

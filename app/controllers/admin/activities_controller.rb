@@ -36,7 +36,7 @@ class Admin::ActivitiesController < Admin::AdminController
   end
 
   def start
-    if %w(Waitin Paused).includes? @activity.status
+    if %w(Waiting Paused).include? @activity.status
       @cycle = @activity.cycles.build
       if @cycle.start_activity
         @activity.status = "In Progress"

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_12_20_044017) do
     t.bigint "activity_id"
     t.datetime "start_t"
     t.datetime "finish_t"
-    t.integer "cycle_time"
+    t.integer "cycle_time", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_cycles_on_activity_id"
