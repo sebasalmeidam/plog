@@ -1,0 +1,33 @@
+<%= form_with(model: [:admin, project]) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-6">
+
+      <div class="field my-3">
+        <%= form.label :name %> <br>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="field my-3">
+        <%= form.label :keycode %> <br>
+        <%= form.text_field :keycode, class: 'form-control' %>
+      </div>
+
+      <div class="actions pl-0">
+        <%= form.submit 'Save', class: 'btn btn-md btn-rounded btn-default ml-0' %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
