@@ -1,13 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-class ActivityContainer extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        <div>hola</div>    
-      </React.Fragment>
-    );
-  }
-}
+import React, { useContext } from "react";
+import {StateProvider} from './context/ActivityContext'
+import ValidateAccess from './access/ValidateAccess'
 
-export default ActivityContainer
+export default function ActivityContainer() {
+  
+  return (
+    <StateProvider>
+      <ValidateAccess />
+    </StateProvider>
+  );
+}
