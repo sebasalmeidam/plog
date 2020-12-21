@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:sebasalmeidam/plog.git"
 set :migration_role, [:app]
 set :keep_releases, 3
 set :pty,  false
-set :rvm_ruby_version, '2.6.6'
+set :rvm_ruby_version, '2.6.6@plog6.1'
 #set :rvm_custom_path, '/usr/share/rvm'
 
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/master.key')
