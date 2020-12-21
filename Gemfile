@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 #custom gems
 #devise
 gem 'devise'
-#gem 'devise-i18n', '1.8.0'
+gem 'devise-i18n', '1.8.0'
 
 #pry for console
 gem 'pry-rails'
