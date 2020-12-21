@@ -9,13 +9,9 @@ set :migration_role, [:app]
 set :keep_releases, 3
 set :pty,  false
 set :rvm_ruby_version, '2.6.6'
+set :rvm_custom_path, '/usr/share/rvm'
 
-set :migration_role, [:app]
-set :keep_releases, 3
-set :pty,  false
-set :rvm_ruby_version, '2.3.3'
-
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/initializers/prod_environment.rb', 'config/master.key')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/master.key')
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 
 namespace :deploy do
