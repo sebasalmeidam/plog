@@ -25,9 +25,10 @@ const client = new ApolloClient({
 export default function Activities() {
   return (
     <ApolloProvider client={client}>
-      <div>
+      <div className="row">
         <Categories />
       </div>
+      
       <div className="row">
         <ActivityList />
       </div>

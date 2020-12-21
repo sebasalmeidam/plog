@@ -38,7 +38,7 @@ export default function Access() {
         </div>
       )
     } else {
-      return <button onClick={getAcess} className="btn btn-rounded" style={{ background: '#cddc39' }}>Continue</button>
+      return <button onClick={getAcess} className="btn btn-rounded" style={{ background: '#cddc39', color: 'black' }}>Continue</button>
     }
   }
 

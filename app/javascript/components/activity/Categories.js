@@ -1,5 +1,5 @@
 import React from "react";
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery, useReactiveVar } from '@apollo/client';
 import {category} from './ActivityCache'
 //designs
 import Slider from 'react-slick'
@@ -24,7 +24,8 @@ const settings = {
 }
 
 export default function Categories() {
-  const { loading, error, data, client } = useQuery(GET_CATEGORIES);
+  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const categoryName = useReactiveVar(category);  
 
   const asignCategory = (name) => {
     category(name)
@@ -34,13 +35,16 @@ export default function Categories() {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <div className="col-12">
+    <div className="col-12 pl-1">
       <Slider {...settings}>
-        {data.categories.map(category => (
-          <div key={category.id} className="white-text text-center">
-            <button onClick={() => asignCategory(category.name)} className="btn btn-sm btn-blue btn-rounded btn-yellow">{category.name}</button>
+        {data.categories.map(categoryItem => (
+          <div key={categoryItem.id} className="white-text text-center">
+            <button onClick={() => asignCategory(categoryItem.name)} className={`btn btn-sm btn-rounded btn-yellow ${categoryName == categoryItem.name ? 'active' : ''}`}>{categoryItem.name}</button>
           </div>
         ))}
+        <div className="white-text text-center">
+          <button onClick={() => asignCategory("")} className={`btn btn-sm btn-rounded btn-yellow ${categoryName == '' ? 'active' : ''}`}>All</button>
+        </div>
       </Slider>
     </div>
   )

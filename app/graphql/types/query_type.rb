@@ -5,8 +5,13 @@ module Types
 
     field :activities, [Types::ActivityType], null: true do
       description "List of activities"
+      argument :category, String, required: false
     end
-    def activities
+    def activities(category:)
+      if category.present?
+        cat = Category.find_by(name: category)
+        return Activity.where(category_id: cat.id).includes(:cycles)  
+      end
       Activity.all.includes(:cycles)
     end
 
