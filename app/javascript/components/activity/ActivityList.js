@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery, useReactiveVar } from '@apollo/client';
-import { category } from './ActivityCache'
+import { category, summary } from './ActivityCache'
 
 const GET_ACTIVITIES = gql`
     query Activity($category: String!){
@@ -24,10 +24,7 @@ export default function ActivityList() {
 
   return (
     <React.Fragment>
-      <div className="col-12">
-        <h3 className="mt-4 text-left h3-responsive font-weight-bolder">Activities</h3>
-      </div>
-
+      
       {data.activities.map(activity => (
         <div key={activity.id} className="text-left col-12">
           <div className="card black" style={{borderTop: 'solid 1px'}}>

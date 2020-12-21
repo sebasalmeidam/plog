@@ -15,7 +15,7 @@ let reducer = (state, action) => {
 
 const initialState = {
   access: false,
-  continue: false
+  continue: false,
 }
 
 const ActivityContext = React.createContext(initialState);

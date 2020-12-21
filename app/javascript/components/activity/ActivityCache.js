@@ -1,5 +1,6 @@
 import { makeVar, InMemoryCache } from '@apollo/client';
 export const category = makeVar('');
+export const summary = makeVar(false);
 
 export const ActivityCache = new InMemoryCache({
   typePolicies: {
@@ -8,6 +9,11 @@ export const ActivityCache = new InMemoryCache({
         categoryName: {
           read() {
             return category();
+          }
+        },
+        showSummary: {
+          read() {
+            return summary();
           }
         }
       }
