@@ -12,3 +12,4 @@ Rails 6.1, Ruby 2.6.6
 * Time calculation
 * Each Project should have its own activities (create relation)
 * Home/ActivityList -> Activity Time message: not display minutes if not started or has a record
+* pending font roboto from framework -> load font by google fonts
