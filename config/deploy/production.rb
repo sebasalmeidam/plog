@@ -7,7 +7,7 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-server Rails.application.credentials.server[:name], user: Rails.application.credentials.server[:user], roles: %w{app db web}
+server "#{Rails.application.credentials.server[:name]}", user: "#{Rails.application.credentials.server[:user]}", roles: %w{app db web}
 set :deploy_to, '~/sites/plog'
 set :branch, 'master'
 
