@@ -1,6 +1,9 @@
 import React from 'react';
 import { ApolloProvider, ApolloLink, ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 
+import Categories from './Categories'
+import ActivityList from './ActivityList'
+
 const httpLink = new HttpLink({ uri: '/graphql' });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
@@ -16,15 +19,18 @@ const cache = new InMemoryCache();
 
 const client = new ApolloClient({
   link: authMiddleware.concat(httpLink),
-  cache,
-  resolvers: {}
+  cache
 })
-
 
 export default function Activities() {
   return (
     <ApolloProvider client={client}>
-      <div>prueba</div>
+      <div>
+        <Categories />
+      </div>
+      <div className="row">
+        <ActivityList />
+      </div>
     </ApolloProvider>
   )
 }

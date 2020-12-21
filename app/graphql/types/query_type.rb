@@ -9,5 +9,12 @@ module Types
     def activities
       Activity.all.includes(:cycles)
     end
+
+    field :categories, [Types::CategoryType], null: true do
+      description "List of categories"
+    end
+    def categories
+      Category.all
+    end
   end
 end
