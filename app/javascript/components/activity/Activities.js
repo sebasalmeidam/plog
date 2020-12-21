@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider, ApolloLink, ApolloClient, HttpLink, InMemoryCache, useReactiveVar } from '@apollo/client';
-import { summary } from './ActivityCache'
+import { category, summary } from './ActivityCache'
 
 import Categories from './Categories'
 import ActivityList from './ActivityList'
@@ -29,6 +29,7 @@ export default function Activities() {
   
   const showSummary = () => {
     summary(true)
+    category('')
   }
 
   const activity_or_summary = () => {
@@ -51,7 +52,7 @@ export default function Activities() {
           <h3 className="mt-4 text-left h3-responsive font-weight-bolder">
             Activities
           <button onClick={showSummary} className="btn btn-sm btn-primary btn-rounded">Summary</button>
-          {summaryActive && <a href="#" onClick={(e) => {e.preventDefault(); summary(false)} } style={{fontSize: '14px'}}>Back to Details</a> }
+            {summaryActive && <a href="#" onClick={(e) => { e.preventDefault(); summary(false); category('')} } style={{fontSize: '14px'}}>Back to Details</a> }
           </h3>
         </div>
         {activity_or_summary()}

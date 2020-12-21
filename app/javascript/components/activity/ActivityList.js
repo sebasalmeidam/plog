@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery, useReactiveVar } from '@apollo/client';
-import { category, summary } from './ActivityCache'
+import { category } from './ActivityCache'
 
 const GET_ACTIVITIES = gql`
     query Activity($category: String!){
