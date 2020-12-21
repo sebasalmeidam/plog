@@ -5,8 +5,8 @@ import {category} from './ActivityCache'
 import Slider from 'react-slick'
 
 const GET_CATEGORIES = gql`
-  {
-    categories {
+  query Categories($name: String!){
+    categories(name: $name) {
       id
       name
     }
@@ -24,7 +24,9 @@ const settings = {
 }
 
 export default function Categories() {
-  const { loading, error, data } = useQuery(GET_CATEGORIES);
+  const { loading, error, data } = useQuery(GET_CATEGORIES, {
+    variables: { "name": "" }
+  });
   const categoryName = useReactiveVar(category);  
 
   const asignCategory = (name) => {

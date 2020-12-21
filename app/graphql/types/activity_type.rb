@@ -9,6 +9,7 @@ module Types
     field :start_time, String, null: true
     field :finish_time, String, null: true
     field :total_time, String, null: true
+    field :category, String, null: false
 
     def details
       object.description.squish.split("/").map(&:lstrip).map(&:strip)
@@ -37,6 +38,10 @@ module Types
       else
         return object.cycles.sum(&:cycle_time)
       end
+    end
+
+    def category
+      object.category.name
     end
 
   end

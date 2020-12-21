@@ -10,16 +10,20 @@ module Types
     def activities(category:)
       if category.present?
         cat = Category.find_by(name: category)
-        return Activity.where(category_id: cat.id).includes(:cycles)  
+        return Activity.where(category_id: cat.id).includes(:cycles).includes(:category)
       end
-      Activity.all.includes(:cycles)
+      Activity.all.includes(:cycles).includes(:category)
     end
 
     field :categories, [Types::CategoryType], null: true do
       description "List of categories"
+      argument :name, String, required: false
     end
-    def categories
-      Category.all
+    def categories(name:)
+      if name.present?
+        return Category.where(name: name).includes(:activities)
+      end
+      Category.all.includes(:activities)
     end
   end
 end

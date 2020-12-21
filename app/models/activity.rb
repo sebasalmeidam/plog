@@ -9,4 +9,8 @@ class Activity < ApplicationRecord
   validates :status, inclusion: { in: STATUS}
   validates :image, content_type: {in: ["image/png", "image/jpg", "image/jpeg"], message: 'Format error'}
 
+  def total_time
+    cycles.sum(&:cycle_time)
+  end
+
 end

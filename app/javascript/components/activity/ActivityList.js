@@ -9,6 +9,7 @@ const GET_ACTIVITIES = gql`
         name
         details
         totalTime
+        category
       }
     }
   `;
@@ -35,7 +36,8 @@ export default function ActivityList() {
                   <li key={`${activity.id}_${i}`} className="card-text">{detail}</li>
                 ))}
               </ul>
-              <p className="card-text"><b>Activity Time:</b> {activity.totalTime} minutes </p>
+              <p className="card-text mb-1"><b>Activity Time:</b> {activity.totalTime} minutes </p>
+              <p className="card-text"><b>Category:</b> {activity.category} </p>
             </div>
           </div>
         </div>
