@@ -34,9 +34,9 @@ export default function Summary() {
             overallTime += category.totalTime
             return (
               <div key={category.id} className="text-left mb-3">
-                <h5 className="card-title mb-2">{category.name}</h5>
-                <p className="card-text mb-1"><b>No. Activities:</b> {category.totalActivities}  </p>
-                <p className="card-text mb-1"><b>Total Time:</b> {category.totalTime} minutes </p>
+                <h5 className="card-title mb-2 lighter-font">{category.name}</h5>
+                <p className="card-text mb-1 darker-font"><b>No. Activities:</b> {category.totalActivities}  </p>
+                <p className="card-text mb-1 darker-font"><b>Total Time:</b> {category.totalTime} minutes </p>
               </div>
             )
           })}
