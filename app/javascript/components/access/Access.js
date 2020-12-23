@@ -31,9 +31,10 @@ export default function Access() {
     if (state.continue) {
       return (
         <div className="row">
-          <div className="col-6 offset-3">
+          <div className="col-12 col-md-6 offset-3">
             <input onChange={validateCode} type="password" className='form-control mb-3' placeholder='Insert Code' autoFocus />
             <a href="#" onClick={cancelContinue}>Cancel</a>
+            <div className="small darker-font"><em>Just in case you didn't see the code: torre.co</em></div>
           </div>
         </div>
       )
