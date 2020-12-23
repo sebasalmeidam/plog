@@ -41,11 +41,11 @@ export default function Categories() {
       <Slider {...settings}>
         {data.categories.map(categoryItem => (
           <div key={categoryItem.id} className="white-text text-center">
-            <button onClick={() => asignCategory(categoryItem.name)} className={`btn btn-sm btn-rounded btn-yellow ${categoryName == categoryItem.name ? 'active' : ''}`}>{categoryItem.name}</button>
+            <button onClick={() => asignCategory(categoryItem.name)} className={`btn btn-sm btn-rounded main-bg dark-font ${categoryName == categoryItem.name ? 'active' : ''}`}>{categoryItem.name}</button>
           </div>
         ))}
         <div className="white-text text-center">
-          <button onClick={() => asignCategory("")} className={`btn btn-sm btn-rounded btn-yellow ${categoryName == '' ? 'active' : ''}`}>All</button>
+          <button onClick={() => asignCategory("")} className={`btn btn-sm btn-rounded main-bg dark-font ${categoryName == '' ? 'active' : ''}`}>All</button>
         </div>
       </Slider>
     </div>

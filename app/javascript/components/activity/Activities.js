@@ -48,7 +48,7 @@ export default function Activities() {
       </div>
       
       <div className="row">
-        <div className="col-12">
+        <div className="lighter-font col-12">
           <h3 className="mt-4 text-left h3-responsive font-weight-bolder">
             Activities
           <button onClick={showSummary} className="btn btn-sm btn-primary btn-rounded">Summary</button>

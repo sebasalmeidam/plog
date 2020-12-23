@@ -15,9 +15,25 @@
       <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     <% end %>
+
+    <!-- Mulish*** font -->
+    <script type="text/javascript">
+			
+			WebFontConfig = {
+		    google: {families: ['Mulish:200,300,300italic,400,400italic,600,600italic,700,700italic,800,800italic']}
+		  };
+		  (function() {
+		    var wf = document.createElement('script');
+		    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+		    wf.type = 'text/javascript';
+		    wf.async = 'true';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(wf, s);
+		  })(); 
+		</script>
   </head>
 
-  <body class="container <%= "black" if action_name.to_s == "home" %>">
+  <body class="container <%= "dark-bg" if action_name.to_s == "home" %>">
     <%= yield %>
 
      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

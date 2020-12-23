@@ -1,4 +1,6 @@
 class Admin::ProjectsController < Admin::AdminController
+  skip_before_action :validate_admin, only: [:validate_keycode]
+  skip_before_action :authenticate_user!, only: [:validate_keycode]
 
   def new
     @project = Project.new

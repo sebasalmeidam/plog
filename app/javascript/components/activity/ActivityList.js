@@ -28,8 +28,8 @@ export default function ActivityList() {
       
       {data.activities.map(activity => (
         <div key={activity.id} className="text-left col-12">
-          <div className="card black" style={{borderTop: 'solid 1px'}}>
-            <div className="card-body px-0">
+          <div className="card black" style={{ borderTop: 'solid 1px #cddc39'}}>
+            <div className="card-body">
               <h5 className="card-title">{activity.name}</h5>
               <ul className="mb-2">
                 {activity.details.map((detail, i) => (

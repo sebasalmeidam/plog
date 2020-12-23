@@ -27,8 +27,8 @@ export default function Summary() {
 
   return (
     <div className="col-12">
-      <div className="card black" style={{ borderTop: 'solid 1px' }}>
-        <div className="card-body px-0">
+      <div className="card black" style={{ borderTop: 'solid 1px #cddc39' }}>
+        <div className="card-body">
           {data.categories.map(category => {
             overallActivities += category.totalActivities
             overallTime += category.totalTime
@@ -42,8 +42,8 @@ export default function Summary() {
           })}
         </div>
       </div>
-      <div className="card black" style={{ borderTop: 'solid 1px' }}>
-        <div className="card-body px-0">
+      <div className="card black" style={{ borderTop: 'solid 1px #cddc39' }}>
+        <div className="card-body">
           <div className="text-left mb-3">
             <h5 className="card-title mb-2">Overall</h5>
             <p className="card-text mb-1"><b>Total Activities:</b> {overallActivities} </p>
