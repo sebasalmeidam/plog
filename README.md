@@ -16,3 +16,4 @@ Rails 6.1, Ruby 2.6.6
 * fix new category design
 * create a model for activity description (has many relationship) instead of / separator
 * test 2
+* body from vscode
